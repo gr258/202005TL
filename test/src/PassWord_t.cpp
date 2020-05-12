@@ -1,5 +1,4 @@
 #include "gtest/gtest.h"
-#include "json/json.h"
 #include "PassWord.h"
 
 TEST(PASSWORD,GIVEN_size_less_6_WHEN_Strong_THEN_RETURN_OK){
@@ -55,8 +54,4 @@ TEST(PASSWORD, GIVEN_size_greater_20_WHEN_Strong_THEN_RETURN_OK){
 	EXPECT_EQ(14, pw.Strong("aaaaaaaaaaaaaaaaaaaaaaabbbbb"));
 	EXPECT_EQ(13, pw.Strong("aaaaaaaaaaaaaaaaaaaacccbbbbb"));
 	EXPECT_EQ(12, pw.Strong("aaaaaaaaaaaaaaaaadddcccbbbbb"));
-}
-
-TEST(PASSWORD, GIVEN_json_string_WHEN_Get_MS_N_THEN_RETURN_OK){
-
 }
