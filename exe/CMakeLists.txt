@@ -10,6 +10,7 @@ file(GLOB_RECURSE SRC_FILES
 include_directories(
   ${CMAKE_CURRENT_LIST_DIR}/include
   ${CODE_BASE}/include
+  ${JSON_BASE}/include
 )
 
 
