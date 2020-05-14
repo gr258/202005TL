@@ -133,7 +133,7 @@ int Game::GetMaxScore(int &MaxScore){
 	bool bSort = false;
 
 	//总积分MaxScore即是当前成本，将消耗不大于成本的所有收益放入收益池中
-	for (auto it = CostScoreMap.begin(); it != CostScoreMap.end(); ){
+	for (map<int, vector<int> >::iterator it = CostScoreMap.begin(); it != CostScoreMap.end(); ){
 		if (it->first <= MaxScore){
 			ScorePool.insert(ScorePool.end(), it->second.begin(), it->second.end());
 			bSort = true;
@@ -151,7 +151,7 @@ int Game::GetMaxScore(int &MaxScore){
 	if (bSort) sort(ScorePool.begin(), ScorePool.end());
 
 	//获取最大的那个收益，累计到自身总积分MaxScore中
-	auto it = ScorePool.end() - 1;
+	vector<int>::iterator it = ScorePool.end() - 1;
 	MaxScore += *it;
 
 	//从收益池中挪出最大的那个收益

@@ -30,6 +30,6 @@ private:
 	int N;
 	int MS;
 
-	map<int, vector<int>>	CostScoreMap;
+	map<int, vector<int> >	CostScoreMap;
 	vector<int>				ScorePool;
 };
